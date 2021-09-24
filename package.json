@@ -1,0 +1,25 @@
+{
+    "name": "vsilver",
+    "displayName": "vsilver",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "silver",
+            "aliases": ["Silver", "silver"],
+            "extensions": [".sv"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "silver",
+            "scopeName": "root.sv",
+            "path": "./syntaxes/silver.tmLanguage.json"
+        }]
+    }
+}

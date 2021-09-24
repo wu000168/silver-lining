@@ -1,0 +1,66 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Silver",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment.line"
+		},
+		{
+			"include": "#comment.block"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.silver",
+					"match": "\\b(if|then|else|while|for|return|with|occurs on)\\b"
+				},
+				{
+					"name": "storage.type",
+					"match": "\\b(grammar|parser|function|nonterminal|synthesized|attribute|abstract|concrete|production|local)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.silver",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.silver",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment.line": {
+			"name": "comment.line.double-dash.silver",
+			"begin": "--",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "comment.silver",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment.block": {
+			"name": "comment.block.silver",
+			"begin": "{-",
+			"end": "-}",
+			"patterns": [
+				{
+					"name": "comment.block.silver",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "root.sv"
+}
