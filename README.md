@@ -1,1 +1,1 @@
-VS Code Language Support for Silver
+## Language Support for Silver by MELT

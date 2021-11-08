@@ -1,25 +1,38 @@
 {
-    "name": "shiny-silver",
-    "displayName": "shiny-silver",
-    "description": "",
+    "name": "silver-shiner",
+    "displayName": "Silver Shiner",
+    "description": "Syntax Highlighting for Silver by MELT",
     "version": "0.0.1",
+    "publisher": "wu000168",
+    "icon": "silver-shiner.jpg",
     "engines": {
         "vscode": "^1.60.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "repository": "https://github.umn.edu/wu000168/silver-shiner",
     "contributes": {
-        "languages": [{
-            "id": "silver",
-            "aliases": ["Silver", "silver"],
-            "extensions": [".sv"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "silver",
-            "scopeName": "root.sv",
-            "path": "./syntaxes/silver.tmLanguage.json"
-        }]
-    }
+        "languages": [
+            {
+                "id": "silver",
+                "aliases": [
+                    "Silver",
+                    "silver"
+                ],
+                "extensions": [
+                    ".sv"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "silver",
+                "scopeName": "root.sv",
+                "path": "./syntaxes/silver.tmLanguage.json"
+            }
+        ]
+    },
+    "dependencies": {}
 }
