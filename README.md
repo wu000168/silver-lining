@@ -1,6 +1,6 @@
-# vsilver README
+# shiny-silver README
 
-This is the README for your extension "vsilver". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "shiny-silver". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
