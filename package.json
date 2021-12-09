@@ -1,6 +1,6 @@
 {
-    "name": "silver-shiner",
-    "displayName": "Silver Shiner",
+    "name": "silverlining",
+    "displayName": "Silverlining",
     "description": "Syntax Highlighting for Silver by MELT",
     "version": "0.0.1",
     "publisher": "wu000168",
@@ -11,7 +11,7 @@
     "categories": [
         "Programming Languages"
     ],
-    "repository": "https://github.umn.edu/wu000168/silver-shiner",
+    "repository": "https://github.umn.edu/wu000168/silverlining",
     "contributes": {
         "languages": [
             {
