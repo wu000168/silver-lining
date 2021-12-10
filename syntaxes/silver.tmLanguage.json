@@ -9,55 +9,137 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#comment.line"
+			"include": "#comment"
 		},
 		{
-			"include": "#comment.block"
+			"include": "#constant"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#support"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.silver",
-					"match": "\\b(if|then|else|while|for|return|with|occurs on)\\b"
+					"name": "keyword.control.flow.silver",
+					"match": "\\b(case|rule|of|let|in|end|decorate|with|prefix|else|forward|if|new|then|toString|toInt|toFloat|length)\\b"
 				},
 				{
-					"name": "storage.type",
-					"match": "\\b(grammar|parser|function|nonterminal|synthesized|attribute|abstract|concrete|production|local)\\b"
+					"name": "keyword.control.flow.other.silver",
+					"match": "\\b(forwarding|forwards|to|return|pluck)\\b"
+				}
+			]
+		},
+		"storage": {
+			"patterns": [
+				{
+					"name": "storage.type.silver",
+					"patterns": [
+						{
+							"name": "storage.type.declarations.silver",
+							"match": "\\b(parser|parse|attribute|annotation|function|local|closed|nonterminal|type|occurs|on|production|terminal|marking|foreign|layout|disambiguate|action|global|productions|lexer|class|default|flowtype|propagate)\\b"
+						},
+						{
+							"name": "storage.type.externals.silver",
+							"match": "\\b(grammar|import|imports|exports|build|hiding|as|only|option)\\b"
+						}
+					]
+				},
+				{
+					"name": "storage.modifier.silver",
+					"patterns": [
+						{
+							"name": "storage.modifier.storage-class.silver",
+							"match": "\\b(abstract|aspect|concrete|inherited|synthesized|functor|monoid|autocopy|ignore)\\b"
+						},
+						{
+							"name": "storage.modifier.scope-declarations.silver",
+							"match": "\\b(left|association|right|precedence|operator|dominates|submits|classes)\\b"
+						}
+					]
 				}
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.silver",
-			"begin": "\"",
-			"end": "\"",
+			"name": "string.quoted",
 			"patterns": [
 				{
-					"name": "constant.character.escape.silver",
-					"match": "\\\\."
+					"name": "string.quoted.single.silver",
+					"begin": "'",
+					"end": "'"
+				},
+				{
+					"name": "string.quoted.double.silver",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.triple.silver",
+					"begin": "\"\"\"",
+					"end": "\"\"\""
 				}
-			]
+			],
+			"include": "#constant.character"
 		},
-		"comment.line": {
-			"name": "comment.line.double-dash.silver",
-			"begin": "--",
-			"end": "\n",
+		"comment": {
 			"patterns": [
 				{
-					"name": "comment.silver",
-					"match": "\\\\."
-				}
-			]
-		},
-		"comment.block": {
-			"name": "comment.block.silver",
-			"begin": "{-",
-			"end": "-}",
-			"patterns": [
+					"name": "comment.line.double-dash.silver",
+					"begin": "--",
+					"end": "\n",
+					"patterns": [
+						{
+							"name": "comment.silver",
+							"match": "\\\\."
+						}
+					]
+				},
 				{
 					"name": "comment.block.silver",
+					"begin": "{-",
+					"end": "-}",
+					"patterns": [
+						{
+							"name": "comment.block.silver",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"constant": {
+			"pattern": [
+				{
+					"name": "constant.character.escape.silver",
+					"match": "\\\\([\\\\\\\"'nrbtf]|[0-9]{1,3}|u[0-9]{1,4})"
+				},
+				{
+					"name": "constant.character.silver",
 					"match": "\\\\."
+				},
+				{
+					"name": "constant.language.silver",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.numeric.silver",
+					"match": "(\\b([0-9]+|0[xX][0-9a-fA-F]+)[Ll]?\\b|\\b(([0-9]+[Ee][-]?[0-9]+|([0-9]*\\.[0-9]+|[0-9]+\\.)([Ee][-]?[0-9]+)?)[fFdD]?|[0-9]+[FfDd]))"
+				}
+			]
+		},
+		"support": {
+			"patterns": [
+				{
+					"name": "support.function.silver",
+					"match": "\\b(print|toString|toInt|toFloat|length|reference|substring|indexOf|error|cast|left|right|partitionEithers|hackUnparse|print|readLineStdin|exit|mkdir|system|writeFile|appendFile|fileTime|isFile|isDirectory|readFile|cwd|envVar|listContents|deleteFile|deleteTree|copyFile|touchFile|error|unsafeIO|genInt|genRand|unsafeTrace|dirNameInFilePath|fileNameInFilePath|splitFileNameAndExtension|map|foldr|foldl|foldr1|foldl1|filter|partition|containsBy|nubBy|removeBy|removeAllBy|last|drop|take|dropWhile|takeWhile|takeUntil|positionOf|positionOfHelper|repeat|zipWith|reverse|sortBy|groupBy|intersperse|unionBy|intersectBy|unionsBy|nil|cons|append|null|listLength|head|tail|locationLte|fromMaybe|orElse|consMaybe|catMaybes|fst|snd|lookupBy|lookupAllBy|unzipPairs|parseTreeOrDieWithoutStackTrace|implode|explode|indexOf|lastIndexOf|substring|startsWith|endsWith|substitute|replicate|isDigit|isAlpha|isSpace|isLower|isUpper|toIntSafe|compareString|stringConcat|stringEq|stringLte|runIO|evalIO|unsafeEvalIO|bindList|returnList|bindMaybe|returnMaybe|runState|evalState|ioval)\\b"
+				},
+				{
+					"name": "support.type.silver",
+					"match": "\\b(IO|Boolean|Decorated|Float|Function|Integer|Production|String)\\b"
 				}
 			]
 		}
