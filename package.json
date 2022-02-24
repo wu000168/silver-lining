@@ -1,17 +1,17 @@
 {
-    "name": "silverlining",
-    "displayName": "Silverlining",
+    "name": "silver-lining",
+    "displayName": "Silver Lining",
     "description": "Syntax Highlighting for Silver by MELT",
-    "version": "0.9",
-    "publisher": "wu000168",
-    "icon": "silver-shiner.jpg",
+    "version": "0.9.0",
+    "publisher": "MELT",
     "engines": {
         "vscode": "^1.60.0"
     },
+    "icon": "5133097.png",
     "categories": [
         "Programming Languages"
     ],
-    "repository": "https://github.umn.edu/wu000168/silverlining",
+    "repository": "https://github.com/wu000168/silver-lining",
     "contributes": {
         "languages": [
             {
