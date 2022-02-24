@@ -21,7 +21,8 @@
                     "silver"
                 ],
                 "extensions": [
-                    ".sv"
+                    ".sv",
+                    ".ag"
                 ],
                 "configuration": "./language-configuration.json"
             }
